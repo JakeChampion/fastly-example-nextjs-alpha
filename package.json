@@ -6,10 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "fastly-build": "npx @fastly/next-compute-js build",
+    "fastly-serve": "npm run fastly-build && cd next-compute-js && fastly compute serve --verbose",
+    "fastly-deploy": "npm run fastly-build && cd next-compute-js && fastly compute publish --verbose"
   },
   "dependencies": {
-    "next": "13.4.10",
+    "@fastly/next-compute-js": "^2.0.0-alpha.10",
+    "next": "13.4.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }
